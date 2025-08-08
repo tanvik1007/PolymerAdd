@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Polymer Add (Thailand) Co., Ltd</title>
+  <link rel="icon" type="image/png" href="image/logo.jpg">
+  <style>
+    body { font-family:Georgia, 'Times New Roman', Times, serif rgb(52, 20, 20); margin: 0; color: #333; }
+    header { background: #102844; color: white; padding: 20px; text-align: center; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
+    nav li { margin: 0 15px; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+    .hero { padding: 60px 20px; background: #f1f6fb; text-align: center; }
+    .hero h1 { margin: 0; font-size: 2.5em; }
+    .hero p { margin: 10px 0; font-size: 1.2em; }
+    .table-container { padding: 20px; }
+    table { width: 5%; border-collapse: collapse; margin-top: 20px; appearance: min; }
+    th, td { border: 1px solid #ccc; padding: 1px 3px; text-align: left; }
+    th { background: #143255; color: white; }
+    footer { background: #f2f2f2; text-align: center; padding: 15px; margin-top: 20px; }
+    #loadButton {
+      background-color: hsl(212, 62%, 16%);
+      color: white;
+      padding: 0px 0px;
+      border: none;
+      margin: 0px auto;
+      display: block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #loadButton:hover {
+      background-color: #2b1961;
+    }
+    #result {
+      padding: 1px;
+      text-align: center;
+    }
+    * { box-sizing: border-box; }
+        body { margin: 0; }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 3;
+        }
+      
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="PolymerAddThailand.html">Home</a></li>
+        <li><a href="prod.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="companies.html">Companies Tied Up With</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    
+    <img src="image/logo.jpg" alt="POLYMER ADD THAILAND" style="width:fit-content; height: 80px; align-items: center;"> <h1>Polymer Add (Thailand) Co., Ltd</h1>
+    <p>Specialist manufacturer of micronized polymer additives using cryogenic grinding technology</p>
+  </section>
+
+  <div class="slideshow-container">
+    <img class="slide active" src="image/IMG_20211022_181353.jpg" alt="Banner 1">
+    <img class="slide" src="image/IMG_20240109_141547.jpg" alt="Banner 2">
+    <img class="slide" src="image/IMG_20230526_103214.jpg" alt="Banner 3">
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+  
+        slides[currentSlide].classList.remove('active');
+
+        
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        
+        slides[currentSlide].classList.add('active');
+    }, 3000);
+  </script>
+    <h2>Industries We Serve</h2>
+     <p>Our micronized additives and blends are tailored to enhance performance across a broad spectrum of industries:</p>
+      <img src="image/IMG_20211209_142916.jpg" alt="Factory" style="height:15%; width: 22%; float:right;">
+    <li>Plastics & Polymers (including PVC, PP, PE, engineering plastics)</li>
+    <li>Masterbatches & Pre‑Blends / One‑Pack Systems</li>
+    <li>Coatings & Powder Coatings</li>
+    <li>Resins (thermosets / thermoplastics)</li>
+    <li>Inks & Pigments</li>
+    <li>Paints (bulk, emulsions, distempers)</li>
+    <li>Adhesives & Sealants</li>
+    <li>Elastomers & Rubber Compounds</li>
+    <li>Printing & Packaging Applications</li>
+    <li>Wire & Cable Compounds (specialty insulating compounds)</li>
+</ul>
+  <footer>
+    &copy; <?= date('Y') ?> Polymer Add (Thailand) Co., Ltd.
+  </footer>
+
+</body>
+</html>

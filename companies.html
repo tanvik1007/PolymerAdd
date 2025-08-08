@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Data - Polymer Add Thailand</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .table-container { padding: 10px; }
+        table { width: 1%; border-collapse: collapse; margin-top: 20px; appearance: min; }
+        th, td { border: 1px solid #0e1737; padding: 1px 3px; text-align: left; }
+        th { background: #11263e; color: rgb(255, 255, 255); }
+        header {
+            background-color: #102844;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            font-size: 26px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #003366;
+            margin-top: 0;
+        }
+        #loadButton {
+            background-color: hsl(212, 62%, 16%);
+            color: white;
+            padding: 20px 15px;
+            border: none;
+            margin: 2px auto;
+            display: block;
+            font-size: 16px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            cursor: pointer;
+        }
+        #loadButton:hover {
+            background-color: #2b1961;
+        }
+        #result {
+            padding: 1px;
+            text-align: center;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 1px 3px;
+            border-bottom: 1px solid #020202;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0f2346;
+        }
+
+        .culture {
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #10273f;
+            color: white;
+            padding: 15px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+    
+
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="image/logo.jpg" alt="Polymer Add Logo">
+    <h1>Polymer Add Thailand</h1>
+</header>
+
+
+<button id="loadButton" onclick="loadCompanyData()">Companies We Tied Up With</button>
+  <div id="result"></div>
+
+  <script>
+    function loadCompanyData() {
+        document.getElementById('result').innerHTML = '<p>Loading data...</p>';
+            fetch('DEMO.php', {
+              method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+            },
+        body: 'fetch=1'
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('result').innerHTML = data;
+    })
+    .catch(error => {
+        document.getElementById('result').innerHTML = '<p>Error loading data.</p>';
+        console.error('Fetch error:', error);
+    });
+}
+</script>
+<div class="container">
+    <h2>Our Work Culture</h2>
+    <p class="culture">
+        At Polymer Add Thailand, we believe that innovation thrives in an environment of mutual respect, collaboration, and personal growth.
+        Our culture is rooted in **integrity**, **professionalism**, and **continuous improvement**.
+        <br><br>
+        We empower our employees to take ownership of their ideas and responsibilities, while offering ongoing opportunities for training, development, and cross-functional collaboration.
+        Teamwork is encouraged across departments, and we celebrate both individual contributions and team achievements.
+        <br><br>
+        As a multinational supplier of polymer additives, we foster a culture of **global thinking**, **eco-consciousness**, and **quality-first mindset**. Whether you're in production, R&D, sales, or support — your work directly impacts our mission to make plastics better and more sustainable.
+        <br><br>
+        We are proud to maintain a **safe, inclusive, and positive workplace** that prioritizes employee well-being and customer satisfaction.
+    </p>
+</div>
+
+<footer>
+    &copy; 2025 Polymer Add Thailand. All rights reserved.
+</footer>
+
+
+
+
+</body>
+</html>
